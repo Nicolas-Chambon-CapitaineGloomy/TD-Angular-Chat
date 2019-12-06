@@ -12,9 +12,13 @@ import { Channels } from "../channels";
 })
 export class ChatComponent implements OnInit {
   
+
+  pseudo:string
   logins: Login[] = [];
   channels : Channels[] = [];
   messages : Messages[] = [];
+
+  public href: string = "";
 
   message : string;
   
@@ -22,11 +26,40 @@ export class ChatComponent implements OnInit {
   constructor(private chatService: ChatService, public router: Router) { }
 
   ngOnInit() {
+    this.href = this.router.url;
+
+
+    // var pathname = new URL(this.href).pathname;
+    // console.log(pathname);
+
+    var chars =  this.href.split('/');
+    
+    this.pseudo = chars[2];
+    
 
     this.parseLogins()
     this.getChannels()
     this.getMessages()
+    this.checkLogin()
 
+
+  }
+
+  private checkLogin(){
+    let bool = false
+    
+    
+    for (let index = 0; index < this.logins.length; index++) {
+      
+      if (this.logins[index].pseudo == this.pseudo){
+        bool = true
+      }
+    }
+    // if (bool == false){
+    //   this.router.navigate([`/login`]);
+    // }
+    // console.log(this.logins[0].pseudo)
+    // console.log(bool)
 
   }
 
@@ -53,7 +86,7 @@ export class ChatComponent implements OnInit {
 
     const messages: Messages = {
       // j'ai pas le temps de faire la verif et de recup le pseudo en 4h
-      pseudo : "UnPseudo",
+      pseudo : this.pseudo,
       message: this.message
       
     }
