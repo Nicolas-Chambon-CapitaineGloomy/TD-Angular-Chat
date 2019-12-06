@@ -7,27 +7,14 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ChatServiceService {
+export class ChatService {
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<Login[]> {
-    return this.http.get<Login[]>(`${environment.backUrl}/todos`)
+    return this.http.get<Login[]>(`${environment.backUrl}/logins`)
   }
 
-  addTodo(todo: Login): Observable<Login>{
-      return this.http.post<Login>(`${environment.backUrl}/todos`,todo)
-    }
-
-  removeTodo(todo : Login): Observable<void>{
-    return this.http.delete<void>(`${environment.backUrl}/todos/${todo.id}`)
-  }
-
-  updateTodo(todo : Login): Observable<void>{
-    return this.http.put<void>(`${environment.backUrl}/todos/${todo.id}`, todo)
-  }
-   
  
-
-  }
+   
 }
