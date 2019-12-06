@@ -19,6 +19,11 @@ export class ChatService {
   }
 
 
+  getMessages(): Observable<Messages[]> {
+    return this.http.get<Messages[]>(`${environment.backUrl}/Messages`)
+  }
+
+
   getChannels(): Observable<Channels[]> {
     return this.http.get<Channels[]>(`${environment.backUrl}/channels`)
   }

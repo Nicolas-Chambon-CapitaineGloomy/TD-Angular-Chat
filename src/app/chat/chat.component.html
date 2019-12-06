@@ -14,9 +14,14 @@
         <div class="col">
 
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col" style="color: white;" >
-                        LES MESSAGES
+                <div class="row" *ngFor="let message of messages">
+                    <div class="col" style="margin-bottom: 1em;">
+                        <div class="card" style="color: black;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">{{message.pseudo}}</h6>
+                                {{message.message}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

@@ -25,6 +25,7 @@ export class ChatComponent implements OnInit {
 
     this.parseLogins()
     this.getChannels()
+    this.getMessages()
 
 
   }
@@ -38,6 +39,12 @@ export class ChatComponent implements OnInit {
   private getChannels() {
     this.chatService.getChannels().subscribe(
       (channels: Channels[]) => this.channels = channels
+      )
+  }
+
+  private getMessages() {
+    this.chatService.getMessages().subscribe(
+      (messages: Messages[]) => this.messages = messages
       )
   }
 
