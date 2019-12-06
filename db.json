@@ -1,0 +1,12 @@
+{
+  "logins": [
+    {
+      "id": 1,
+      "pseudo": "Nicolas"
+    },
+    {
+      "id": 2,
+      "pseudo": "Joaquim"
+    }
+  ]
+}
