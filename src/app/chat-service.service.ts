@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Login } from "./login";
+import { Channels } from "./channels";
+import { Messages } from "./messages";
+
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,6 +16,15 @@ export class ChatService {
 
   getUsers(): Observable<Login[]> {
     return this.http.get<Login[]>(`${environment.backUrl}/logins`)
+  }
+
+
+  getChannels(): Observable<Channels[]> {
+    return this.http.get<Channels[]>(`${environment.backUrl}/channels`)
+  }
+
+  postMessage(messages: Messages): Observable<Messages>{
+    return this.http.post<Messages>(`${environment.backUrl}/messages`,messages)
   }
 
  

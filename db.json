@@ -11,33 +11,37 @@
   ],
   "channels": [
     {
-    "id": 1,
-    "name": "Général"
+      "id": 1,
+      "name": "Général"
     },
     {
-    "id": 2,
-    "name": "BDE"
+      "id": 2,
+      "name": "BDE"
     },
     {
-    "id": 3,
-    "name": "Vie étudiante"
+      "id": 3,
+      "name": "Vie étudiante"
     },
     {
-    "id": 4,
-    "name": "Programmation"
+      "id": 4,
+      "name": "Programmation"
     }
-    ],
-    "messages": [
-      {
+  ],
+  "messages": [
+    {
       "id": 1,
       "pseudo": "Gloomy",
       "message": "Youpiiiiii"
-      },
-      {
+    },
+    {
       "id": 2,
       "pseudo": "Zluglu",
       "message": "4h pour creer un messenger dans une technologie qu'on ne connais pas bien !"
-      }
-      
-    ]
+    },
+    {
+      "pseudo": "UnPseudo",
+      "message": "sdfqsd",
+      "id": 3
+    }
+  ]
 }

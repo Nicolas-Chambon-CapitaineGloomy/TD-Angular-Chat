@@ -4,9 +4,9 @@
     <div class="row">
         <div class="col-2" style="background-color: black; height: 100vh;">
             <div class="container-fluid">
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col ">
-                        <button class="btn btn-primary">Chattez</button>
+                <div class="row" style="margin-top: 3em;" *ngFor="let channel of channels">
+                    <div class="col" >
+                        <button class="btn btn-primary">{{channel.name}}</button>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,19 @@
 
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col" style="color: white;" >
+                        LES MESSAGES
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col">
-                        
+                            <form class="example-form">
+                                    <mat-form-field class="example-full-width" >
+                                        <input matInput placeholder="message" [(ngModel)]="message" name="message">
+                                    </mat-form-field>
+                                    
+                                    <button style="margin-left: 2em;" mat-flat-button color="warn" (click)="sendMessage()" type="button" name="validate">Envoyer</button>
+                                </form>
                     </div>
                 </div>
             </div>
@@ -24,3 +35,4 @@
         </div>
     </div>
 </div>
+
